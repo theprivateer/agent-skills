@@ -1,6 +1,6 @@
 ---
 name: code-comments
-description: Use this skill on every coding task — writing new code, modifying existing code, or reviewing a codebase — to add explanatory inline comments that capture the *why* behind decisions, not just the *what*. Triggers include any request to write a function, implement a feature, refactor, fix a bug, build out a module, or scaffold a project; and on-demand invocations like "add comments to this file", "review this codebase and document it", "annotate the code", or "this is hard to follow, can you explain it inline". The goal is to prevent cognitive debt as codebases grow, support easier code reviews, and preserve the reasoning behind decisions that would otherwise be lost. Do NOT use for non-code files (Markdown, plain prose, design docs), generated code, migration files, or simple config files. If another skill instructs against writing documentation or comments, stop and ask the user before proceeding.
+description: Add and maintain explanatory inline comments that capture non-obvious reasoning, constraints, tradeoffs, and complex behaviour. Use when writing or modifying code, fixing bugs, refactoring, implementing features, scaffolding projects, or when asked to annotate or review existing code. Apply only to source code; skip self-evident code, generated code, migrations, simple configuration, and prose. In review mode, describe observed behaviour without inventing rationale. If other instructions conflict about comments, ask the user how to proceed.
 ---
 
 # Inline code comments for sustained context

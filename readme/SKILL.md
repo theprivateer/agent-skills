@@ -1,18 +1,13 @@
 ---
 name: readme
-description: Update or create the current project's README.md (and optionally CLAUDE.md) by sweeping the full codebase. Invoked by the user with /readme. Produces comprehensive documentation covering features, project structure, usage, local-development setup, and testing.
-user-invocable: true
+description: Create or update a project's README.md from a full repository sweep. Use when the user asks to write, refresh, rebuild, or review a README. Document verified features, structure, usage, local development, testing, building, and deployment. Also evaluate AGENTS.md and any existing client-specific agent instruction files when repository guidance needs to stay in sync.
 ---
 
 # README updater
 
 ## Purpose
 
-Keep the project's `README.md` accurate and complete by deriving its content from the actual codebase rather than memory or stale notes. A thorough file sweep is mandatory — never rely solely on the current context window. The skill also updates `CLAUDE.md` when the sweep uncovers information that would help future Claude sessions work effectively in the project.
-
-## When to run
-
-This skill is user-invoked via `/readme`. Do not trigger it automatically.
+Keep the project's `README.md` accurate and complete by deriving its content from the actual codebase rather than memory or stale notes. Complete a thorough file sweep and never rely solely on the current context window. Keep agent instruction files in sync when the sweep uncovers repository guidance that would help future agents work effectively in the project.
 
 ## Conflicts with other instructions
 
@@ -144,18 +139,20 @@ Write the file to `README.md` at the project root. If a `README.md` already exis
 
 ---
 
-### Step 5 — Evaluate CLAUDE.md
+### Step 5 — Evaluate agent instructions
 
-Review the sweep findings and the newly written README. Consider whether any of the following belong in `CLAUDE.md`:
+Review the sweep findings and the newly written README. Consider whether any of the following belong in project-level agent instructions:
 
 - Conventions that are non-obvious from reading the code (naming rules, architectural decisions, forbidden patterns)
-- Commands Claude should know to run tests, start the dev server, or build the project
+- Commands agents should know to run tests, start the development server, or build the project
 - Areas of the codebase that are sensitive or require extra care
-- Known workarounds, gotchas, or technical debt that would affect how Claude should approach tasks
+- Known workarounds, gotchas, or technical debt that would affect how agents should approach tasks
 
-If `CLAUDE.md` does not exist and there is meaningful content to add, create it. If it already exists, update only the sections that need to change — preserve existing content that remains accurate. If nothing from the sweep warrants a CLAUDE.md addition, skip this step and say so.
+Prefer `AGENTS.md` for agent-neutral guidance. If it does not exist and there is meaningful content to add, create it. If it already exists, update only the sections that need to change and preserve content that remains accurate.
 
-Tell the user what was added or changed in `CLAUDE.md`, if anything.
+Also inspect any existing client-specific agent instruction files. Update them only when their existing content needs to stay in sync, and preserve their client-specific structure and scope. Do not create a vendor-specific instruction file unless the user asks for one.
+
+If nothing from the sweep warrants an instruction-file change, skip this step and say so. Tell the user which instruction files were added or changed, if any.
 
 ---
 
@@ -165,4 +162,4 @@ Tell the user what was added or changed in `CLAUDE.md`, if anything.
 - **No filler.** Do not include sections with only placeholder text such as "coming soon" or "see the source." Omit the section entirely.
 - **Concrete examples.** Where usage instructions exist, show actual commands or code snippets derived from the real project — not generic templates.
 - **Keep it current.** The README should reflect the state of the codebase at the time of the sweep, not aspirational future state.
-- **Do not overwrite uncommitted work.** If `README.md` has uncommitted changes, warn the user and ask whether to overwrite before writing.
+- **Do not overwrite uncommitted work.** If `README.md` or an agent instruction file has uncommitted changes, warn the user and ask whether to overwrite before writing.

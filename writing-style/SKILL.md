@@ -1,18 +1,12 @@
 ---
 name: writing-style
 description: >-
-  Mandatory style guide for all written English output. Enforces Australian English spelling,
-  bans common AI-tell words and phrases, and ensures a direct, natural, human tone. Use this
-  skill every time you write, edit, rewrite, or review prose of any kind, including: emails,
-  Slack messages, blog posts, reports, articles, presentations, one-pagers, job descriptions,
-  speaker notes, customer replies, farewell messages, internal announcements, creative writing,
-  or any other text a human will read. Also use when cleaning up AI-generated text (e.g. from
-  ChatGPT, Gemini, or another LLM) to remove robotic language. If someone asks you to "make
-  this sound more natural", "rewrite this", "draft a message", "write an email", "clean this
-  up", or "fix the tone", this skill applies. Even short, informal messages like a two-line
-  Slack ping must follow these rules. The only exceptions are code, variable names, and direct
-  quotes. When in doubt, use this skill. It is better to over-trigger than to miss a case
-  where the output sounds like AI wrote it.
+  Apply Australian English and a direct, natural tone to written English. Use whenever writing,
+  editing, rewriting, or reviewing prose, including emails, chat messages, documentation,
+  reports, articles, presentations, creative work, and short informal copy. Also use to remove
+  robotic phrasing from LLM-generated text or when asked to improve tone, clarity, or naturalness.
+  Do not apply to code, identifiers, direct quotes, or proper names whose official spelling must
+  be preserved.
 ---
 
 # Writing Style Rules
