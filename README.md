@@ -49,7 +49,7 @@ agent-skills/
 Clone the repository, then copy or link the skill directories into a location your agent scans. You can choose a different local checkout name without changing the skills:
 
 ```bash
-git clone https://github.com/theprivateer/claude-skills.git agent-skills
+git clone https://github.com/theprivateer/agent-skills.git
 cd agent-skills
 ```
 
