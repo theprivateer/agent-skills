@@ -75,6 +75,7 @@ These are AI tells. Don't use them, period. If you catch yourself reaching for o
 - Cutting-edge
 - Seamless / seamlessly
 - Utilise (use "use")
+- Load-bearing
 
 ### Banned constructions
 
